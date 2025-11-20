@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <button>Click</button>
+        <br>
+        <p>
+            <button onclick="
+                increase();
+            " class="js-add-btn">Add</button>
+            <button onclick="
+                decrease();
+            " class="js-remove-btn">Remove</button>
+        </p>
+        <script>
+            document.title = 'Qouted';
+            function titleAlter() {
+                setInterval(function() {
+                    document.title = 'App';
+                }, 1000);
+                };
+
+titleAlter();
+
+let messages = 2;
+function titleAlter() {
+    setInterval(function() {
+        document.title = `${messages}`;
+    }, 1000);
+    };
+
+
+function increase() {
+   if(document.querySelector('.js-add-btn')) {
+    messages++;
+   }};
+
+
+function decrease() {
+    while(messages === 0) {
+        titleAlter();
+    }
+   if(document.querySelector('.js-remove-btn')) {
+    messages--;
+   }
+};
+while(messages === 0) {
+    titleAlter();
+   };
+
+
+
+        </script>
+    </body>
+</html>

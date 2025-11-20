@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM Projects Lesson 10</title> 
+        <style>
+             body {
+                font-family: Arial;
+            }
+
+            .subscribe-button {
+                border: none;
+                background-color: black;
+                color: white;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 15px;
+                padding-right: 15px;
+                font-weight: bold;
+                border-radius: 50px;
+                cursor: pointer;
+                margin-bottom: 30px;
+            }
+
+            .is-subscribed {
+                background-color: rgb(240, 240, 240);
+                color: black;
+            }
+
+            .cost-input {
+                font-size: 15px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            .calculate-button {
+                background-color: green;
+                color: white;
+                border: none;
+                font-size: 15px;
+                padding: 12px 15px;
+                cursor: pointer;
+            }
+           
+        </style>                   
+    </head>
+    <!--Process for JavaScript
+    1. Figure out what steps we need (algorithm)
+    2. Convert these into code.-->
+    <!--Steps
+    1. If the text is "Subscribe" => "Subcsribed"
+    2. Otherwise, change it back to "Subscribe"-->
+        <p>YouTube Subscribe Button</p>
+        <button onclick="
+          subscribe();
+        " class="js-subscribe-button subscribe-button">Subscribe</button>
+        <!--Steps
+        When we click button
+        1. Get the text in the box
+        2. If the amount is less than $40, add $10
+        3. Display total on the page-->
+<p>Amazon Shipping Calculator</p>
+<input placeholder="Cost of Order" class="js-cost-input cost-input" 
+    onkeydown="handleCostKeydown(event);">
+<button onclick="
+    calculateTotal();
+" class="calculate-button">Calculate</button>
+<p class="js-total-cost"></p>
+
+
+        <script>
+
+            window.document;
+            window.console.log('window');
+            window.alert;
+            
+            function handleCostKeydown(event) {
+                //console.log(event.key);
+                if(event.key === 'Enter') {
+                    calculateTotal();
+                }
+            };
+
+            function calculateTotal() {
+                const inputElement = document.querySelector('.js-cost-input');
+                let cost = Number(inputElement.value);      //inputElement.value is a string have to change to integer for math.
+// Whenever we get a value from the DOM, the value will be a string.
+                if(cost < 40){
+                    cost = cost +10;
+                }
+
+                document.querySelector('.js-total-cost').innerHTML = `$${cost}`;
+            };
+
+
+           function subscribe(){
+                const buttonElement = document.querySelector('.js-subscribe-button');
+
+                if(buttonElement.innerText === 'Subscribe'){        //innerText solves the issue of spaces in the HTML file between tags which innerHTML cannot overlook.
+                    buttonElement.innerHTML = 'Subscribed';
+                    buttonElement.classList.add('is-subscribed');
+                } else{
+                    buttonElement.innerHTML = 'Subscribe';
+                    buttonElement.classList.remove('is-subscribed');
+                }
+            };
+        </script>
+    </body>
+    <!--clicks and keydowns => events
+    onclicks and onkeydowns => event listeners-->
+</html>

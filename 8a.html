@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercise 8 Objects</title>
+    </head>
+    <body>
+        <script>
+            product = {
+                name: 'basketball',
+                price: 2095
+            };
+            console.log(product);
+            console.log(product.price);
+             // Exercise 8b
+            console.log(product.price+= 500);
+            console.log(product.price);
+
+        // Exesrcise 8c
+             product['delivery-time'] = '3 Days';
+
+             console.log(product);
+
+             function comparePrice(product1, product2){
+                if(product1.price < product2.price){
+                    console.log(product1);
+                    return product1;
+                } else{
+                    console.log(product2);
+                    return product2;
+                }
+             };
+
+
+             const stock1 = {
+                name: 'plate',
+                price: 799
+             };
+
+             const stock2 = {
+                name: 'platter',
+                price: 855
+             };
+
+            comparePrice(stock1, stock2);
+
+        // Exercise 8e
+            function isSameProduct(product1, product2){
+                if(product1 === product2){
+                    console.log('true');
+                    return product1;
+                } else{
+                    console.log('false');
+                }
+            };
+            
+            const spares1 = {
+                name: 'camshaft',
+                price: 4995
+            };
+
+            const spares2 = spares1;
+
+            isSameProduct(spares1, spares2);
+
+        // Exercise 8f
+            console.log('Good Morning'.toLowerCase());
+
+        </script>
+    </body>
+

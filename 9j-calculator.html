@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercise 9j Calculator</title>
+    </head>
+    <body>
+        <p>Calculator</p>
+        <p class="js-calculation">Calculation:</p>
+
+        <p>
+        <button onclick="
+            updateCalculation('1');"
+            >1</button>
+        <button onclick="
+            updateCalculation('2');"   
+            >2</button>
+        <button onclick="
+            updateCalculation('3');"   
+            >3</button>
+
+        <button onclick="
+            updateCalculation('+');
+            ">+</button>
+        <button onclick="
+            calculateAnswer();"
+            >=</button>
+        </p>
+        <button onclick="
+        updateCalculation('4');"
+        >4</button>
+
+    <button onclick="
+        updateCalculation('5');"   
+        >5</button>
+
+    <button onclick="
+        updateCalculation('6');"   
+        >6</button>
+
+
+        <p>
+            <button onclick="
+            updateCalculation('7');"
+            >7</button>
+
+        <button onclick="
+            updateCalculation('8');"   
+            >8</button>
+
+        <button onclick="
+            updateCalculation('9');"
+            >9</button>
+
+        </p>
+
+       <p>
+            <button onclick="
+                calculation = '';
+                ">Reset</button>
+        </p>
+        <script>
+        /*    let entry = {
+                one: '1', two: '2', three: '3', four: '4', five: '5', six: '6',
+                seven: '7', eight: '8', nine: '9', plus: '+'
+            };      
+                    */
+
+            let result = JSON.parse(localStorage.getItem('result')) || {
+                calculation: ''
+            };
+
+            let newEntry = '';
+            function updateCalculation(entry){
+                
+                if(entry != '+' && '='){
+
+                    newEntry += entry;
+
+                    console.log(newEntry);
+
+                    document.querySelector('.js-calculation')
+                        .innerHTML = `Calculation: ${newEntry}`;
+                    
+                    return newEntry;
+                } else if('+'){
+                    let add = `${newEntry} + `;
+                    
+                    newEntry = add;
+
+                    document.querySelector('.js-calculation')
+                        .innerHTML = `Calculation: ${newEntry}`;
+
+                    console.log(add);
+                    return newEntry;
+                }
+
+               
+
+            console.log(result.calculation);   
+                
+            
+            return newEntry;
+            };
+
+        function calculateAnswer() {
+            if(newEntry){
+                    result.calculation = eval(newEntry);
+                    document.querySelector('.js-calculation')
+                        .innerHTML = `Calculation: ${newEntry} = ${result.calculation}`;
+                        }
+        };
+
+        localStorage.setItem('result', JSON.stringify(result));
+
+       
+        
+        </script>
+    </body>
+</html>

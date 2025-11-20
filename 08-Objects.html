@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Objects</title>
+    </head>
+    <body>
+        <script>
+          /*  {
+                name: 'shirt',          <=     // Property
+                price: 799,
+
+                method: function func() {      <=      // Method
+                    console.log('method');
+                }
+            }
+                        */
+
+
+    /*        const product = {
+                name: 'socks',       // Property-Value Pair.
+                price: 1090
+            };
+
+            console.log(product);
+            console.log(product.name);
+            console.log(product.price);
+
+            product.name = 'cotton socks';
+
+            console.log(product.name);
+
+            product.newProperty = true;
+            console.log(product);
+
+        delete product.newProperty
+        console.log(product);
+
+        */                                                          // Falsey values - false 0 '' NaN undefined null.
+
+         /*   product2 = {
+                name: 'shirt',
+                'delivery-time' : '1 day',                          // omitting square brackets also suffices.
+                rating: {
+                    stars: 4.5,
+                    count: 87
+                },
+                fun: function function1(){                            // e.g console is an object and log is a function inside console.
+                    console.log('function inside an object.')         // A function is also seen or known as a type of value.
+                }                                                     // A function inside an object is also called a method.
+            };
+
+            console.log(product2);
+            console.log(product2.name);
+            console.log(product2['name']);                 // Bracket Notation. When dot notation don't work.
+            console.log(product2['delivery-time']);
+
+            console.log(product2.rating.count);
+
+            product2.fun()                                  // calling function fun from inside object product2.
+
+            console.log(typeof console);                    // console is an object.
+            console.log(typeof console.log);                // log is a method inside object console provided by JavaScript.
+
+            // We are also going to learn about 2 more built-in objects namely [JSON and localStorage]
+            // JSON - [JavaScript Object Notation] - A syntax similar to JavaScript object. 
+            // JSON is more universally compatible with other programming languages.
+            // We use JSON to send data between computers. Also when we store data.
+            // A JSON object helps us convert a JavaScript Object into JSON.
+
+            console.log(JSON.stringify(product2));           // product2 converted into JSON object.(excludes functions or methods).
+
+
+
+            const jsonString = JSON.stringify(product2);     // Conversion of JSON string into JavaScript object.
+            JSON.parse(jsonString);                          // We use a method in JSON called parse().
+
+            console.log(JSON.parse(jsonString));
+
+        // localStorage - stores a string in localStorage.
+
+            localStorage.setItem('message', 'hello');
+
+            */
+
+
+            console.log('hello'.length);                           // Auto-Boxing in JavaScript
+
+            console.log('hello'.toUpperCase());
+
+        // Objects are References. to a loction in computer memory.
+            const object1 = {
+                message: 'hello'
+            };
+            const object2 = object1;                               // Copy by reference.
+        
+            object1.message = 'Good Job!';                         // Property values can be changed even if object save in const.
+            console.log(object1);
+            console.log(object2);
+
+            const object3 = {
+                message: 'Good Job!'
+            };
+
+            console.log(object3 === object1);                      // property names are the references being compared (computer              memory to be exact). so that cannot be physically the same. hence the comparison comes up false.
+            
+            console.log(object2 === object1);                      // true is the outcome since object2 was assigned as a copy of object1.
+
+            const object4 = {
+                message: 'Good Job!',
+                price: 799
+            };
+
+           // const message = object4.message;
+            const { message, price } = object4;                          // destructuring - easier way to take properties out of objects.
+            console.log(message);
+            console.log(price);
+
+            const object5 = {
+                //message: message
+                message,                                            // Shorthand property same output as the above.
+                //method: function function1(){
+             //    console.log('method');
+          //      }
+
+          method(){
+                console.log('method');                               // Shorthand method
+            }
+
+            };
+
+            
+
+            console.log(object5);
+            console.log(object5.method());
+
+
+        </script>
+    </body>
+
+
+</html>

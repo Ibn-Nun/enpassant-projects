@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercise 9a</title>
+    </head>
+    <body>
+        <button>9a</button>
+        <button class="js-9b-button">9b</button>
+        <br>
+        <button onclick="playGame('heads')">heads</button>
+        <button onclick="playGame('tails')">tails</button>
+        <p class="js-selection"></p>
+        <br>
+        <input class="js-text-input" onkeydown="handleNameKeydown(event);">
+        <button onclick="textInput();">Submit</button>
+        <p class="js-text-output"></p>
+        <br>
+        <input placeholder="Type Something" class="js-typetext" onkeyup="handleTextKeyUp(event);">
+        <p class="js-showtext"></p>
+<script>
+     let randomNumber = Math.random();
+            let result  = '';
+            let guess = '';
+            let score = JSON.parse(localStorage.getItem('score')) || {
+                wins: 0,
+                losses: 0
+            };
+// Part of exercises 9a or b
+    console.log(document.querySelector('button'));
+    
+    document.querySelector('.js-9b-button').innerHTML = '9b done!';
+
+    function handleNameKeydown(event) {
+                //console.log(event.key);
+                if(event.key === 'Enter') {
+                    textInput();
+                }
+            };
+    
+    function handleTextKeyUp(event) {
+        textTyper();
+    };
+
+    function textTyper() {
+        const inputElement = document.querySelector('.js-typetext');
+        inputElement.value = event.key;
+        document.querySelector('.js-showtext').innerText = `${inputElement.value}`;
+    };
+
+
+    function textInput() {
+        const inputElement = document.querySelector('.js-text-input');
+        const text = inputElement.value;
+        document.querySelector('.js-text-output').innerHTML = `Your name is: ${text}`;
+    };
+
+    
+            function playGame(guess){
+                if(randomNumber < 0.5){
+                result = 'heads';
+            }else{
+                result = 'tails';
+            };
+
+            console.log(result);
+
+            if(guess === result){
+                console.log('You win.');
+            }else{
+                console.log('You lose.');
+            }
+
+
+            if(result === guess){
+                score.wins++;
+            } else{
+                score.losses++;
+            };
+
+            document.querySelector('.js-selection').innerHTML = `You chose: ${guess}`;
+
+            console.log(`Wins: ${score.wins} Losses: ${score.losses}`);
+            return result;
+            };
+
+            localStorage.setItem('score',JSON.stringify(score));
+
+</script>
+    </body>
+</html>

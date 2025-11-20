@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Functions</title>
+    </head>
+    <body>
+        <script>
+           /* function function1(){
+                console.log('hello');
+                console.log(2 + 2);
+            };
+
+            function1(); */
+// parameters put values in to the function.
+// return values on the hand put out values from within the function when the function is called. 
+//function calculateTax(cost, taxPercent)
+
+            function calculateTax(cost, taxPercent = 0.1){              // default value for the second parameter.
+                console.log(cost * taxPercent);
+            };
+
+            calculateTax(2000);
+
+            calculateTax(5000);
+/*
+    function func(parameter = 'default'){
+            console.log(parameter);
+    };
+
+            now when we call the function
+    func();    =>   'default'
+    func(undefined);    =>  'default'
+
+    func(null)     =>  null
+            null = so when one intentionally wants something to be empty
+*/
+        </script>
+    </body>
+
+
+</html>

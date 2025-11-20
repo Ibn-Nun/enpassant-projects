@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Booleans</title>
+    </head>
+    <body>
+        <script>
+            let randomNumber = Math.random();
+            let result  = 'tails';
+            let guess = 'heads';
+
+        /*    if(randomNumber < 0.5){
+                result = 'heads';
+            }else{
+                result = 'tails';
+            };
+
+            console.log(result);
+
+            if(guess === result){
+                console.log('You win.');
+            }else{
+                console.log('You lose.');
+            }
+
+        */    
+
+            
+            result = randomNumber < 0.5 ? result = 'heads' : result = 'tails'; 
+
+
+            console.log(result);
+
+            let flipCoin = guess === result ? console.log('You win!.') : console.log('You lose!.');
+
+            console.log(flipCoin);
+
+
+        
+
+        </script>
+    </body>
+
+
+</html>

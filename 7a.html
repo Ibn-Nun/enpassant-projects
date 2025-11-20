@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Functions Exercises</title>
+    </head>
+    <body>
+        <script>
+        /*  function greet() {
+            console.log('Hello');
+          };
+
+          greet();
+          greet();
+          greet();
+          greet();
+
+          function greet1(name = 'Hi there!') {
+            console.log(`Hello ${name}`);
+          };
+
+          greet1('Stephen');
+          greet1('Peter');
+          greet1('David');
+          greet1('John');
+
+        greet1();                       
+
+        greet1();
+
+        greet1('Nzuzo');
+
+        function greet2(name){
+            if(!name){
+                console.log('Hi there!');
+            } else{
+                console.log(`Hello ${name}`);
+            }
+        };
+        greet2();*/
+// Exercise 7d
+        function convertToFahrenheit(celcius){
+            let fahrenheit = (celcius * 9/5) + 32;
+            return fahrenheit;
+        };
+
+        //console.log(convertToFahrenheit(25));
+// Exercise 7e
+        function convertToCelcius(fahrenheit){
+            let celcius = (fahrenheit - 32) * 5/9;
+            return celcius;
+        };
+
+        //console.log(convertToCelcius(86));
+// Exercise 7f
+        function convertTemperature(degrees, unit){
+            
+            if (unit === 'C'){
+                temp = console.log(`${convertToFahrenheit(degrees)}F`) ;
+            } else if (unit === 'F'){
+                temp = console.log(`${convertToCelcius(degrees)}C`);
+            }
+
+            return temp;
+        };
+
+        convertTemperature(86,'F');
+        convertTemperature(25,'C');
+
+// Exercise 7g
+        function convertToMile(kilometers){
+            let miles = kilometers / 1.6;
+            return miles;
+        };
+
+        function convertToKilometer(miles){
+            let kilometers = miles * 1.6;
+            return kilometers;
+        };
+
+        function milesToFeet(miles){
+            let feet = miles * 5280;
+            return feet;
+        };
+
+        function kilosToFeet(kilometers){
+            let feet = kilometers * 3281;
+            return feet;
+        };
+
+
+        function convertLength(length, unit1, unit2){ 
+
+            if(unit1 === 'miles' && unit2 === 'km') {
+                console.log(`${convertToKilometer(length)} km`);
+            } else if(unit1 === 'km' && unit2 === 'miles') {
+                console.log(`${convertToMile(length)} miles`);
+            } else if(unit1 === 'km' && unit2 === 'km'){
+                console.log(`${length} km`);
+            } else if(unit1 === 'miles' && unit2 === 'ft'){
+                console.log(`${milesToFeet(length)} ft`);
+            } else if(unit1 === 'km' && unit2 === 'ft'){
+                console.log(`${kilosToFeet(length)} ft`);
+            } else if(unit1 != 'miles' && 'km' && 'ft'){
+                console.log(`Invalid unit: ${unit1}`);
+            } else if(unit2 != 'miles' && 'km'){
+                console.log(`Invalid unit: ${unit2}`);
+            }
+        };
+            
+            
+     //Done.      
+            
+        
+        convertLength(50,'miles', 'km');
+
+        convertLength(32, 'km', 'miles');
+
+        convertLength(50, 'km', 'km');
+
+        convertLength(5, 'miles', 'km');
+
+        convertLength(5, 'miles', 'ft');
+
+        convertLength(5, 'km', 'ft');
+        convertLength(6, 'lbs', 'ft');
+        convertLength(7, 'miles', 'gal');
+
+        </script>
+    </body>
+
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercises on Advanced Functions</title>
+    </head>
+    <body>
+        <button onclick="
+            startFinish();
+            " class="js-start-finish-btn js-loading-btn">Start</button>
+            <br>
+            <button onclick="
+                AddMessage();
+            ">Add to cart</button>
+            <p class="js-cart-message"></p>
+        <script>
+          const add = function() {
+            console.log(2+3);
+          };
+
+          add();
+          add();
+
+          let fun = function() {
+            console.log('12b');
+          };
+            function runTwice(fun) {
+            console.log('12b');
+          }
+           runTwice(add());
+           runTwice(fun);
+
+           function startFinish() {
+            document.querySelector('.js-loading-btn').innerHTML = 'Loading...';
+            setTimeout(function() {
+                document.querySelector('.js-start-finish-btn').innerHTML = 'Finished!';
+            }, 1000)
+           };
+
+           function AddMessage() {
+            let addedMessage = document.querySelector('.js-cart-message');
+                addedMessage.innerHTML = 'Added';
+                let timelapse = setTimeout(function() {
+                addedMessage.innerHTML = '';
+                }, 2000);
+                while(timelapse === !true) {
+                clearTimeout(timelapse);
+                } 
+
+                timelapse;
+           };
+
+           function btnSecondPress(param) {
+            param;
+            clearTimeout(timelapse);
+           }
+
+        </script>
+    </body>
+</html>

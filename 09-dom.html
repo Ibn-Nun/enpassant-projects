@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM</title>                    
+    </head>
+    <body>
+        <!--DOM is a built-in object inside JavaScript. Called document object-->
+        <!--the document object models the webpage-->
+        <!--The DOM comes with Syntax. including methods-->
+        <!--HTML elements are JavaScript objects-->
+        <!--DOM combines JS and HTML together
+        It gives JavaScript access and full control of the webpage.-->
+        <button>Hello</button>
+        <button class="js-button">Second button</button>
+        <script>
+            console.log(document.querySelector('button').innerHTML);
+
+            document.querySelector('button')
+                .innerHTML = 'Changed';
+
+            
+            const buttonElement = document.querySelector('.js-button');
+            console.log(buttonElement);
+
+
+
+
+
+
+
+
+
+
+
+/*
+            console.log(document.title);
+            //document.title = 'Changed';
+            document.body.innerHTML = "Changed";
+
+            console.log(document.body);
+            console.log(typeof document.body);
+
+            console.log(document.body.innerHTML);                 // this provides access to the elements or tags between the body element for manipulation.
+
+            document.body.innerHTML = '<button>Good job!</button>';
+*/
+            /* Method - is a function that is saved inside an object.
+             1. document.querySelector() - lets us get any element from the webpage and put it inside JavaScript.
+             */
+
+
+
+
+            /*
+            document.body.innerHTML = 'hello';
+            document.title = 'Good job!';
+            */
+        </script>
+    </body>
+</html>
